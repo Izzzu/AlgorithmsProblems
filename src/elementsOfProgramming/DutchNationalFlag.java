@@ -1,4 +1,4 @@
-package arrays;
+package elementsOfProgramming;
 
 import java.util.Collections;
 import java.util.List;

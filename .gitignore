@@ -1,0 +1,9 @@
+
+.idea/$PRODUCT_WORKSPACE_FILE$
+.idea/compiler.xml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+ElementsOfProgramming.iml
+out/

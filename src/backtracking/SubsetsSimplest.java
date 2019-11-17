@@ -9,7 +9,6 @@ public class SubsetsSimplest {
         if (A == null )
             return null;
 
-
         Collections.sort(A);
 
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();

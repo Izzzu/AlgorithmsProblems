@@ -13,6 +13,7 @@ public class SubsetBinaryCounting {
             int bit = i;
             ArrayList<Integer> inputSet = new ArrayList<Integer>();
             while(bit!=0) {
+                // pls do not add comments in the code
                 inputSet.add(A.get((int)((Math.log(bit&~(bit-1)))/Math.log(2))));
                 bit &=bit-1;
             }
@@ -40,5 +41,7 @@ public class SubsetBinaryCounting {
 
         return result;
     };
+
+
 
 }

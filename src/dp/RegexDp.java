@@ -52,23 +52,19 @@ public class RegexDp {
 
         Boolean [][] dp = new Boolean[a.length()+1][b.length()+1];
 
-        for (int i = 0; i <= b.length(); i++) {
-            dp[0][i] = false;
-        }
-        for (int i = 0; i <= a.length(); i++) {
-            dp[i][0] = false;
-        }
-        for (int i1 = a.length(); i1 >=0; i1--) {
-            for (int i2 = b.length()-1; i2 >=0; i2--) {
-
-                if (i1 < a.length() && b.charAt(i2) == a.charAt(i1) || b.charAt(i2) == '?') {
-                    dp[i1][i2] = dp[i1+1][i2+1];
-                } else  if () {
-
-                }
+        for (int i1 = 0; i1 <=a.length(); i1++) {
+            for (int i2 = 0; i2<=b.length(); i2++) {
+               if (i1 == 0 && i2 == 0) {
+                   dp[i1][i2] = true;
+               } else if (i2>0 && b.charAt(i2-1) == '*') {
+                   dp[i1][i2] = dp[i1][i2-1] || (i1>0 && dp[i1-1][i2]);
+               } else if (i1>0 && i2>0 && (b.charAt(i2-1) == a.charAt(i1-1) || b.charAt(i2-1) == '?')) {
+                   dp[i1][i2] = dp[i1-1][i2-1];
+               } else dp[i1][i2] = false;
             }
         }
 
+        return dp[a.length()][b.length()] ? 1 :0;
     }
 
 

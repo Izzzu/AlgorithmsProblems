@@ -1,5 +1,7 @@
 package dp;
 
+import java.util.Arrays;
+
 public class RegexDp2 {
     public int isMatch(final String text, final String pattern) {
         boolean[][] dp = new boolean[text.length()+1][pattern.length()+1];
@@ -19,7 +21,6 @@ public class RegexDp2 {
                 dp[i][j] = match(text, pattern, i + 1, j + 1, dp);
             } else dp[i][j] = false;
         }
-
 
         return dp[i][j];
     }
